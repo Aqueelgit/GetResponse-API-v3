@@ -44,30 +44,30 @@ class OlsysController extends ControllerBase
   //  API_URL_360_PL = 'https://api3.getresponse360.pl/v3';
   //  API_URL_SMB = 'https://api.getresponse.com/v3';
     $url = $base_url.$_SERVER['REQUEST_URI'];
-
+    
+    // Add your get response API Key
     $campaignslist = new Api('xxxxxxxxxxxxxxxxxxxxxxxxxxxx', $api_url = NULL, $domains = NULL);
-    //$webforms = $campaignslist->getForms();
-   // $webforms = $campaignslist->getCustomFields();
-    // $campaign = array('campaignId' => 'oND3y');
-    // $refrence = array(
-      // 'customFieldId' => 'V0fxUjK', 
-      // 'value' => ['https://adse.net/tours/birds-and-tigers-of-himalayan-foothills']
-    // );
-    // $phone = "+87-5656677888";
-    // $refrence_phone = array(
-      // 'customFieldId' => 'V0PFNy', 
-      // 'value' => [$phone]
-    // );
-    // $params = array(
-        // 'email' => 'amir243@open.com',
-        // 'campaign' => $campaign,
-        // 'name' => 'Aqueel',
-        // 'customFieldValues' => [$refrence, $refrence_phone]
-    // );
-    // $rs = $campaignslist->addContact($params);
-    // $status = $campaignslist->http_status;
-    //print '<pre>' . print_r(json_encode($params), true) .'</pre>';
-     // print 'status<pre>' . print_r($status, true) .'</pre>';
+    $webforms = $campaignslist->getForms(); // get form list
+    $webforms = $campaignslist->getCustomFields(); // get Campaigns list
+    $campaign = array('campaignId' => 'oND3y');
+    $refrence = array(
+      'customFieldId' => 'V0fxUjK', 
+      'value' => ['https://adse.net/tours/birds-and-tigers-of-himalayan-foothills']
+    );
+    $phone = "+87-5656677888";
+    $refrence_phone = array(
+      'customFieldId' => 'V0PFNy', 
+      'value' => [$phone]
+    );
+    $params = array(
+        'email' => 'amir243@open.com',
+        'campaign' => $campaign,
+        'name' => 'Aqueel',
+        'customFieldValues' => [$refrence, $refrence_phone]
+    );
+    $rs = $campaignslist->addContact($params);
+    $status = $campaignslist->http_status;
+   
     // print 'webforms<pre>' . print_r($webforms, true) .'</pre>';
 		$form = array('data' => $url);
 
