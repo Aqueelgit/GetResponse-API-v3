@@ -1,0 +1,5 @@
+name: Olsys
+type: module
+description: Basic custom features added.
+core: 8.x
+package: Olsys

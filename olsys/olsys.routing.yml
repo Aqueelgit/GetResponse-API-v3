@@ -1,0 +1,6 @@
+olsys.getdata:
+ path: '/list-getresponse'
+ defaults:
+   _controller: '\Drupal\olsys\Controller\OlsysController::getDatalist'
+ requirements:
+   _permission: 'access content'

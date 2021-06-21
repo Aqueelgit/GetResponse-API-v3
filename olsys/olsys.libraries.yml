@@ -1,0 +1,5 @@
+olsys:
+  js:
+    js/myjs.js: {}
+  dependencies:
+      - core/jquery
